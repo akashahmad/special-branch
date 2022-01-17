@@ -1,5 +1,7 @@
 import search from "../../assets/image/icons/search.png";
 const ListPageListing = ({ records, searchHandler }) => {
+  
+  console.log("Records" , records)
   return (
     <>
       <div className="box-height bg-white rounded-md mt-5 mx-5">

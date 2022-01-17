@@ -7,13 +7,12 @@ import Message from "./pages/message";
 import Layout from "./components/layout";
 const App = () => {
   const [records, setRecords] = useState([]);
-  const [backupData] = useState([]);
+  const [backupData , setBackupData] = useState([]);
   return (
     <>
       <BrowserRouter>
         <Layout>
           <Routes>
-            ]
             <Route
               path="/list"
               element={
@@ -26,7 +25,7 @@ const App = () => {
             />
             <Route
               path="/home"
-              element={<Home records={records} setRecords={setRecords} />}
+              element={<Home records={records} setRecords={setRecords} setBackupData={setBackupData} />}
             />
             <Route path="/message" element={<Message />} />
             <Route path="/" element={<Login />} />

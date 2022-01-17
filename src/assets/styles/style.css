@@ -27,6 +27,7 @@ body {
   font-weight: 800;
 }
 /* Textarea Width */
+
 .message-page textarea {
   border: 1px solid #999999;
   width: 100%;
@@ -35,16 +36,43 @@ body {
   resize: none;
 }
 /* Box Height */
+
 .box-height {
   min-height: 330px;
 }
 .hamburger-react {
   color: white;
 }
+
+/* page height */
+
+.page-height{
+  min-height: 730px;
+}
+
 /* Screen Height */
+
 .screen-height {
   height: 100vh;
 }
+
+/* Arrows hide from input type select */
+
+.add-new-number input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* form button disable */
+
+.login-form button:disabled,
+button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
 /* Screen Height Query */
 @media (max-width: 760px) and (min-width: 300px) {
   .screen-height {

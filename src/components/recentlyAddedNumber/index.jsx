@@ -2,40 +2,41 @@ import DustBin from "../../assets/image/icons/delete.png";
 import Add from "../../assets/image/icons/add.png";
 import { Link } from "react-router-dom";
 
-const RecentlyAddedNumber = ({
-  setRecords,
-  records,
-}) => {
+const RecentlyAddedNumber = ({ setRecords, records, setBackupData }) => {
   // Delete Function
   const deleteHandler = (index) => {
-    let afterDelete = [...records]
-    afterDelete.splice(index, 1);;
+    let afterDelete = [...records];
+    afterDelete.splice(index, 1);
     setRecords(afterDelete);
+    setBackupData(afterDelete)
   };
 
   // Add New Number
-  const AddNumber = () => {
+  const addNumber = () => {
     let _number = [...records];
-    let newData = "+923";
+    let newData = "92";
     _number?.push(newData);
     setRecords(_number);
-    setTimeout(()=>{
-      document.getElementById("idContentEditable"+(_number.length-1)).focus()
-    },500)
+    setBackupData(_number)
+    setTimeout(() => {
+      document
+        .getElementById("idContentEditable" + (_number.length - 1))
+        .focus();
+    }, 500);
   };
 
   // On Kyepress Fnction
   const handleKeypress = (event) => {
-    if (event.code === "Enter" && records[records.length-1] !=="+923") {
-      AddNumber();
+    if (event.code === "Enter" && records[records.length - 1] !== "92") {
+      addNumber();
     }
   };
 
-  const updateNumber=(value, index)=>{
+  const updateNumber = (value, index) => {
     const _records = [...records];
     _records[index] = value;
     setRecords([..._records]);
-  }
+  };
 
   return (
     <>
@@ -55,7 +56,7 @@ const RecentlyAddedNumber = ({
               alt="Add"
               className="cursor-pointer"
               onClick={(event) => {
-                AddNumber(event);
+                addNumber(event);
               }}
             />
           </div>
@@ -64,15 +65,16 @@ const RecentlyAddedNumber = ({
           <div className="p-5">
             {records?.map((single, index) => (
               <div
-                className="mx-6 border rounded-md px-3 flex justify-between my-5"
-                key={index+""}
+                className="add-new-number mx-6 border rounded-md px-3 flex justify-between my-5"
+                key={index + ""}
               >
-                <div>
+                <div className="w-full">
                   <input
+                    type="number"
                     id={"idContentEditable" + index}
                     defaultValue={single}
                     name="new_number"
-                    className="text-dark-black-two font-semibold text-base py-3 outline-none"
+                    className="text-dark-black-two font-semibold text-base py-3 outline-none w-full"
                     onChange={(event) => {
                       updateNumber(event.target.value, index);
                     }}
