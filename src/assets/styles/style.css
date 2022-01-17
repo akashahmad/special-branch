@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", sans-serif;
+}
+
+.layout-button {
+  width: 141px;
+  height: 40px;
+}
+.layout-border {
+  border-bottom: 0.5px solid #ffffff;
+}
+.add-button {
+  width: 175px;
+}
+/* Placeholder color */
+
+.listing-search ::-webkit-input-placeholder {
+  color: #1b1633 !important;
+  font-weight: 800;
+}
+/* Textarea Width */
+.message-page textarea {
+  border: 1px solid #999999;
+  width: 100%;
+  margin: 5px 0;
+  padding: 12px 12px;
+  resize: none;
+}
+/* Box Height */
+.box-height {
+  min-height: 330px;
+}
+.hamburger-react {
+  color: white;
+}
+/* Screen Height */
+.screen-height {
+  height: 100vh;
+}
+/* Screen Height Query */
+@media (max-width: 760px) and (min-width: 300px) {
+  .screen-height {
+    height: unset;
+  }
+}
