@@ -1,9 +1,7 @@
+import cookie from "react-cookies";
 import LoginLogo from "../assets/image/loginLogo.png";
 import loginFormLogo from "../assets/image/loginFormLogo.png";
 import { useEffect } from "react";
-import cookie from "react-cookies";
-import AuthHOC from "../components/authHOC";
-import { Code } from 'react-content-loader'
 const Login = () => {
 
   const users = [
@@ -22,7 +20,7 @@ const Login = () => {
   ];
   useEffect(() => {
     document.getElementById("form").addEventListener("submit", auth);
-  }, []);
+  },[]);
 
   function auth(event) {
     event.preventDefault();
@@ -35,7 +33,7 @@ const Login = () => {
     );
 
     if (filteredItems) {
-      cookie.save("username", username, { path: "/login", maxAge: 3600 });
+      cookie.save("username", username, { path: "/", maxAge: 3600 });
       window.location.replace("/");
 
     } else {
@@ -45,14 +43,14 @@ const Login = () => {
   }
   return (
     <>
-      <AuthHOC>
+      {!cookie.load('username') ?
         <div className="flex justify-between screen-height">
           <div className="bg-gradient-to-b from-regal-blue to-regal-brown w-2/5 hidden lg:block">
             <div className=" flex justify-center items-center h-full">
               <img src={LoginLogo} alt="police-logo" />
             </div>
           </div>
-          <div className="bg-white w-full lg:w-3/5 px-4 lg:px-44 py-0 lg:py-24 overflow-y-scroll flex justify-center items-center">
+          <div className="w-full lg:w-3/5 px-4 lg:px-44 py-0 lg:py-24 overflow-y-scroll flex justify-center items-center">
             <div className="w-full px-12 py-12 border-2 border-opacity-50 shadow-md rounded-md">
               <div>
                 <img src={loginFormLogo} alt="Police-Logo" />
@@ -109,7 +107,10 @@ const Login = () => {
             </div>
           </div>
         </div>
-      </AuthHOC>
+        : 
+     <div/>
+
+        }
     </>
   );
 };

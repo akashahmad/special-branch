@@ -36,7 +36,7 @@ const Header = ({ setToggle, toggle }) => {
               </Link>
             </div>
             <div className="flex hidden lg:block">
-              <Link className="mr-7" to="/home">
+              <Link className="mr-7" to="/">
                 <button
                   className={`transition ease-in-out layout-button font-semibold rounded-md hover:bg-white hover:text-dark-blue bg-dark-blue text-white ${navActiveHandler(
                     "/home"

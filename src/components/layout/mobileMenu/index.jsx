@@ -16,7 +16,7 @@ const MobileMenu = ({ setToggle }) => {
                   closeMenu();
                 }}
               >
-                <Link to="/home">Send Message</Link>
+                <Link to="/">Send Message</Link>
               </li>
 
               <li

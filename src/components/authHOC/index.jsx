@@ -10,7 +10,7 @@ const AuthHOC = (props) => {
     if (path === "/login" && isAuthenticated) window.location.replace("/");
     if (authenticatedPaths.includes(path) && !isAuthenticated)
       window.location.replace("/login");
-  }, [path]);
+  }, []);
   return <>{props.children}</>;
 };
 export default AuthHOC;

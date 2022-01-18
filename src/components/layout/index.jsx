@@ -10,7 +10,7 @@ const Layout = (props) => {
     <>
       <div
         className={` ${
-          pathname === "/"
+          pathname === "/login"
             ? ""
             : "bg-gradient-to-r from-regal-blue to-regal-brown min-h-screen"
         }`}

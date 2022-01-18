@@ -5,6 +5,7 @@ import Home from "./pages/home";
 import List from "./pages/list";
 import Message from "./pages/message";
 import Layout from "./components/layout";
+import AuthHOC from "./components/authHOC";
 const App = () => {
   const [records, setRecords] = useState([]);
   const [backupData , setBackupData] = useState([]);
@@ -12,14 +13,15 @@ const App = () => {
     <>
       <BrowserRouter>
         <Layout>
+          <AuthHOC>
           <Routes>
           <Route
-            exact path="/"
+              path="/"
               element={<Home records={records} setRecords={setRecords} setBackupData={setBackupData} />}
             />
-          <Route path="/login" element={<Login />} />
+            <Route path="/login" element={<Login />} />
             <Route
-             exact path="/list"
+              path="/list"
               element={
                 <List
                   records={records}
@@ -28,8 +30,9 @@ const App = () => {
                 />
               }
             />
-            <Route exact path="/message" element={<Message />} />
+            <Route path="/message" element={<Message />} />
           </Routes>
+          </AuthHOC>
         </Layout>
       </BrowserRouter>
     </>
