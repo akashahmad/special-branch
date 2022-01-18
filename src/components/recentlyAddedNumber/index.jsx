@@ -54,7 +54,7 @@ const RecentlyAddedNumber = ({ setRecords, records, setBackupData }) => {
               src={Add}
               width={36}
               alt="Add"
-              className="cursor-pointer"
+              className="cursor-pointer hover:scale-110 transition ease-in-out"
               onClick={(event) => {
                 addNumber(event);
               }}
