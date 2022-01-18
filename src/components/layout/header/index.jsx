@@ -15,7 +15,7 @@ const Header = ({ setToggle, toggle }) => {
       {cookie.load("username") ? (
         <div
           className={`layout-border py-4 sticky lg:absolute top-0 left-0 right-0 z-40 bg-gradient-to-r from-regal-blue to-regal-brown lg:bg-transparent ${
-            pathname === "/home" ||
+            pathname === "/" ||
             pathname === "/list" ||
             pathname === "/message"
               ? "block"

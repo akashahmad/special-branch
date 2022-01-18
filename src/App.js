@@ -13,8 +13,13 @@ const App = () => {
       <BrowserRouter>
         <Layout>
           <Routes>
+          <Route
+            exact path="/"
+              element={<Home records={records} setRecords={setRecords} setBackupData={setBackupData} />}
+            />
+          <Route path="/login" element={<Login />} />
             <Route
-              path="/list"
+             exact path="/list"
               element={
                 <List
                   records={records}
@@ -23,12 +28,7 @@ const App = () => {
                 />
               }
             />
-            <Route
-              path="/home"
-              element={<Home records={records} setRecords={setRecords} setBackupData={setBackupData} />}
-            />
-            <Route path="/message" element={<Message />} />
-            <Route path="/" element={<Login />} />
+            <Route exact path="/message" element={<Message />} />
           </Routes>
         </Layout>
       </BrowserRouter>

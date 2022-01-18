@@ -7,7 +7,7 @@ const Footer = () => {
       {cookie.load("username") ? (
         <div
           className={`relative bottom-0 flex flex-col lg:flex-row justify-center items-center lg:justify-between container mx-auto py-6 ${
-            pathname === "/home" ||
+            pathname === "/" ||
             pathname === "/list" ||
             pathname === "/message"
               ? "block"

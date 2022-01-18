@@ -35,8 +35,8 @@ const Login = () => {
     );
 
     if (filteredItems) {
-      cookie.save("username", username, { path: "/", maxAge: 3600 });
-      window.location.replace("/home");
+      cookie.save("username", username, { path: "/login", maxAge: 3600 });
+      window.location.replace("/");
 
     } else {
       alert("Please enter valid information");
@@ -46,14 +46,13 @@ const Login = () => {
   return (
     <>
       <AuthHOC>
-      {!cookie.load('username') ?
         <div className="flex justify-between screen-height">
           <div className="bg-gradient-to-b from-regal-blue to-regal-brown w-2/5 hidden lg:block">
             <div className=" flex justify-center items-center h-full">
               <img src={LoginLogo} alt="police-logo" />
             </div>
           </div>
-          <div className="w-full lg:w-3/5 px-4 lg:px-44 py-0 lg:py-24 overflow-y-scroll flex justify-center items-center">
+          <div className="bg-white w-full lg:w-3/5 px-4 lg:px-44 py-0 lg:py-24 overflow-y-scroll flex justify-center items-center">
             <div className="w-full px-12 py-12 border-2 border-opacity-50 shadow-md rounded-md">
               <div>
                 <img src={loginFormLogo} alt="Police-Logo" />
@@ -110,14 +109,6 @@ const Login = () => {
             </div>
           </div>
         </div>
-        : 
-        <Code
-        width={100}
-        height={100}
-        viewBox="0 0 100 100"
-        style={{ width: '100%' }}
-      />
-        }
       </AuthHOC>
     </>
   );

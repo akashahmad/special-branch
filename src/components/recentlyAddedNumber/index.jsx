@@ -14,7 +14,7 @@ const RecentlyAddedNumber = ({ setRecords, records, setBackupData }) => {
   // Add New Number
   const addNumber = () => {
     let _number = [...records];
-    let newData = "92";
+    let newData = "923";
     _number?.push(newData);
     setRecords(_number);
     setBackupData(_number)
@@ -27,7 +27,7 @@ const RecentlyAddedNumber = ({ setRecords, records, setBackupData }) => {
 
   // On Kyepress Fnction
   const handleKeypress = (event) => {
-    if (event.code === "Enter" && records[records.length - 1] !== "92") {
+    if (event.code === "Enter" && records[records.length - 1] !== "923") {
       addNumber();
     }
   };
