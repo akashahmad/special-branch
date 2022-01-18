@@ -45,7 +45,7 @@ const RecentlyAddedNumber = ({ setRecords, records, setBackupData }) => {
           <div>
             <p className="dark-black text-lg font-bold">
               Recently Added Numbers
-              <span className="text-xs">( {records?.length} Number )</span>
+              <span className="text-xs">( {records?.length} Number{records?.length > 1 ? "'s" : ""} )</span>
             </p>
           </div>
           <div>
